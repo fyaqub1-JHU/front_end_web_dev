@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  header {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .menu-title {
+    font-size: 2rem;
+  }
+  
+  .categories-title {
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+    text-align: left;
+    margin-left: 10px;
+  }
+  
+  .content-box {
+    border: 1px solid black;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+  
+  .content-box p {
+    margin-top: 30px;
+  }
+  
+  .content-box:hover {
+    overflow-y: scroll;
+    cursor: ns-resize;
+  }
+  
+  .content-box::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .content-box:hover::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .content-box:hover::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  .content-box:hover::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  #chicken .section-title {
+    background-color: #4caf50;
+  }
+  
+  #beef .section-title {
+    background-color: #ff5722; 
+  }
+  
+  #water .section-title {
+    background-color: #2196f3; 
+  }
+  
+  .section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+    text-align: right;
+    max-width: 100%;
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+  
+  .mobile-title {
+    display: none; 
+    font-size: 1rem;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Layout */
+  main {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .content-box {
+    width: 32%;
+  }
+  
+  /* Desktop Mode */
+  @media (min-width: 992px) {
+    main {
+      flex-wrap: nowrap;
+    }
+    
+    /* Show Section Titles  */
+    .section-title {
+      display: block;
+    }
+  
+    /* Hide Mobile Titles  */
+    .mobile-title {
+      display: none;
+    }
+  }
+  
+  /* Tablet Mode */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .content-box:nth-child(1),
+    .content-box:nth-child(2) {
+      width: 46%;
+    }
+    
+    .content-box:nth-child(3) {
+      width: 96%;
+    }
+  
+    /* Show Section Titles  */
+    .section-title {
+      display: block;
+    }
+  
+    /* Hide Mobile Titles  */
+    .mobile-title {
+      display: none;
+    }
+  }
+  
+  /* Mobile Mode  */
+  @media (max-width: 767px) {
+    .menu-title {
+      display: none;
+    }
+  
+    .categories-title {
+      display: block;
+    }
+  
+    main {
+      display: block;
+    }
+  
+    .content-box {
+      width: 95%;
+    }
+  
+    /* Hide Section Titles  */
+    .section-title {
+      display: none;
+    }
+  
+    /* Show Mobile Title */
+    .mobile-title {
+      display: block;  
+    }
+  }
+
+  #chicken .mobile-title {
+    background-color: #4caf50;
+  }
+  
+  #beef .mobile-title {
+    background-color: #ff5722; 
+  }
+  
+  #water .mobile-title {
+    background-color: #2196f3; 
+  }
