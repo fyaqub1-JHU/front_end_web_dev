@@ -15,7 +15,7 @@ body {
   
   .categories-title {
     font-size: 1.2rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Georgia, serif;
     display: none;
     text-align: left;
     margin-left: 10px;
@@ -82,6 +82,7 @@ body {
     text-align: right;
     max-width: 100%;
     box-sizing: border-box;
+    border: 1px solid black;
   }
   
   .mobile-title {
@@ -94,6 +95,8 @@ body {
     word-wrap: break-word;
     white-space: normal;
     line-height: 1.5;
+    color: #ffffff;
+    border: 1px solid black;
   }
   
   main {
@@ -103,7 +106,7 @@ body {
   }
   
   .content-box {
-    width: 32%;
+    width: 33%;
   }
   
   /* Desktop Mode */
@@ -132,7 +135,7 @@ body {
 
     .content-box:nth-child(1),
     .content-box:nth-child(2) {
-      width: 46%;
+      width: 46.5%;
     }
     
     .content-box:nth-child(3) {
@@ -166,6 +169,7 @@ body {
   
     .content-box {
       width: 95%;
+      margin: 10px auto;
     }
   
     /* Hide Section Titles  */
