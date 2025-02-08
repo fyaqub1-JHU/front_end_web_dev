@@ -1,0 +1,93 @@
+body {
+    padding-top: 70px; 
+    margin: 0;
+    padding: 0;
+}
+
+.section-box {
+    background-color: #dfd8d8; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black; 
+    height: 700px;
+}
+
+.section-heading {
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+}
+
+.back-to-top {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    position: relative;
+    border-bottom: 1px solid black; 
+    margin: 0;
+    padding: 0;
+    background-color: #dfd8d8; 
+}
+
+.navbar .navbar-toggle {
+    border: 1px solid black; 
+}
+
+.navbar .navbar-toggle[aria-expanded="true"] {
+    background-color: #ffffff; 
+    border-color: #fcf9f9; 
+}
+
+.navbar .navbar-toggle[aria-expanded="true"] .icon-bar {
+    background-color: #d0d0d0; 
+}
+
+.navbar .navbar-toggle .icon-bar {
+    background-color:#000000;
+}
+
+.navbar-collapse {
+    position: absolute;
+    top: 100%;  
+    width: 100%;
+    left: 15px; 
+    right: 15px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.navbar-collapse .visible-xs {
+    border: 1px solid black;
+}
+
+.navbar-nav li a {
+    color: white;
+}
+
+.navbar-nav .visible-xs {
+    display: block;
+}
+
+.navbar-nav .visible-xs li a {
+    color: #555;
+}
+
+.section-box {
+    margin-bottom: 15px;
+}
+
+.section-heading {
+    font-size: 20px;
+}
+
+.text-center {
+    margin-top: 20px;
+}
