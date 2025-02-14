@@ -65,3 +65,30 @@ for (var i = 0; i < names.length; i++) {
 }
 
 })();
+
+// 2b
+(function () {
+  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+  function getGreeting(name) {
+    var firstLetter = name.charAt(0).toLowerCase();
+    if (firstLetter === 'j') {
+      return byeSpeaker.speakSimple(name);
+    } else {
+      return helloSpeaker.speakSimple(name);
+    }
+  }
+
+  // Uses map to create greetings array
+  var greetings = names.map(getGreeting);
+
+  // Prints mapped array with speak function
+  for (var i = 0; i < greetings.length; i++) {
+    var greeting = greetings[i];
+    if (greeting.startsWith("Good Bye")) {
+      byeSpeaker.speak(greeting.replace("Good Bye ", ""));
+    } else {
+      helloSpeaker.speak(greeting.replace("Hello ", ""));
+    }
+  }
+  })();
