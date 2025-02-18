@@ -73,8 +73,10 @@ for (var i = 0; i < names.length; i++) {
   function getGreeting(name) {
     var firstLetter = name.charAt(0).toLowerCase();
     if (firstLetter === 'j') {
+
       return byeSpeaker.speakSimple(name);
     } else {
+
       return helloSpeaker.speakSimple(name);
     }
   }
@@ -82,13 +84,48 @@ for (var i = 0; i < names.length; i++) {
   // Uses map to create greetings array
   var greetings = names.map(getGreeting);
 
-  // Prints mapped array with speak function
+  console.log("\n2: ");
+
   for (var i = 0; i < greetings.length; i++) {
     var greeting = greetings[i];
     if (greeting.startsWith("Good Bye")) {
+
       byeSpeaker.speak(greeting.replace("Good Bye ", ""));
     } else {
+      
       helloSpeaker.speak(greeting.replace("Hello ", ""));
     }
   }
   })();
+
+// 3b 
+(function () {
+
+  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+  function splitNames(accumulator, name) {
+    var firstLetter = name.charAt(0).toLowerCase();
+
+    if (firstLetter === 'j') {
+
+      accumulator.bye.push(byeSpeaker.speakSimple(name));
+    } else {
+
+      accumulator.hello.push(helloSpeaker.speakSimple(name));
+    }
+
+    return accumulator;
+  }
+
+  var groupedGreetings = names.reduce(splitNames, { hello: [], bye: [] });
+
+  console.log("\n3: ");
+
+  for (var i = 0; i < groupedGreetings.hello.length; i++) {
+    console.log(groupedGreetings.hello[i]);
+  }
+
+  for (var i = 0; i < groupedGreetings.bye.length; i++) {
+    console.log(groupedGreetings.bye[i]);
+  }
+})();

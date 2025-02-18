@@ -29,13 +29,18 @@
   var helloSpeaker = {};  
   var speakWord = "Hello";
 
-  helloSpeaker.speak = function(name) {
-    console.log(speakWord + " " + name);
-  };
-
-  helloSpeaker.speakSimple = function(name) {
-    return speakWord + " " + name;  
-  };
+    function speak(name) {
+      console.log(speakWord + " " + name);
+    }
+  
+    function speakSimple(name) {
+      return speakWord + " " + name;
+    }
+  
+    var helloSpeaker = {
+      speak: speak,
+      speakSimple: speakSimple
+    };
 
   window.helloSpeaker = helloSpeaker;
 })();

@@ -30,13 +30,18 @@
   var byeSpeaker = {};  
   var speakWord = "Good Bye";
 
-  byeSpeaker.speak = function(name) {
-    console.log(speakWord + " " + name);
-  };
-
-  byeSpeaker.speakSimple = function(name) {
-    return speakWord + " " + name;  
-  };
+    function speak(name) {
+      console.log(speakWord + " " + name);
+    }
+  
+    function speakSimple(name) {
+      return speakWord + " " + name;
+    }
+  
+    var byeSpeaker = {
+      speak: speak,
+      speakSimple: speakSimple
+    };
 
   window.byeSpeaker = byeSpeaker;
 })();
