@@ -1,0 +1,8 @@
+<ul class="list-group" ng-if="foundItems.length > 0">
+    <li class="list-group-item" ng-repeat="item in foundItems track by $index">
+        <strong>{{ item.name }}</strong> ({{ item.short_name }}) - {{ item.description }}
+        <button class="btn btn-danger btn-sm float-right" ng-click="onRemove({index: $index})">
+            Don't want this one!
+        </button>
+    </li>
+</ul>
