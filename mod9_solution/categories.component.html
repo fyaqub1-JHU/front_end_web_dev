@@ -1,0 +1,11 @@
+<div>
+    <h1>Categories</h1>
+    <ul>
+        <li ng-repeat="category in $ctrl.categories">
+            <a ui-sref="items({ categoryShortName: category.short_name })">{{ category.name }}</a>
+            <div ng-if="category.special_instructions">
+                <p><strong>Special Instructions:</strong> {{ category.special_instructions }}</p>
+            </div>
+        </li>
+    </ul>
+</div>
