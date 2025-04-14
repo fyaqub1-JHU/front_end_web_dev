@@ -15,9 +15,8 @@
         })
         .state('categories', {
             url: '/categories',
-            template: '<categories categories="$resolve.categories"></categories>',
-            controller: CategoriesController,
-            controllerAs: '$ctrl',
+            template: '<categories categories="$ctrl.categories"></categories>',
+            controller: 'CategoriesController as $ctrl',
             resolve: {
                 categories: ['MenuDataService', function(MenuDataService) {
                     return MenuDataService.getAllCategories();
@@ -26,9 +25,8 @@
         })
         .state('items', {
             url: '/items/{categoryShortName}',
-            template: '<items items="$resolve.items"></items>',
-            controller: ItemsController,
-            controllerAs: '$ctrl',
+            template: '<items items="$ctrl.items"></items>',
+            controller: 'ItemsController as $ctrl',
             resolve: {
                 items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
                     return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
@@ -37,14 +35,4 @@
         });
     }
 
-    // Controllers
-    function CategoriesController(categories) {
-        var $ctrl = this;
-        $ctrl.categories = categories;
-    }
-
-    function ItemsController(items) {
-        var $ctrl = this;
-        $ctrl.items = items;
-    }
 })();
