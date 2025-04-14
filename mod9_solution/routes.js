@@ -38,11 +38,13 @@
     }
 
     // Controllers
-    function CategoriesController() {
+    function CategoriesController(categories) {
         var $ctrl = this;
+        $ctrl.categories = categories;
     }
 
-    function ItemsController() {
+    function ItemsController(items) {
         var $ctrl = this;
+        $ctrl.items = items;
     }
 })();
