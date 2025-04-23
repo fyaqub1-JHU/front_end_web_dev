@@ -1,0 +1,19 @@
+<div class="container" ng-if="myInfoCtrl.signedUp">
+    <h3>User Information</h3>
+    <p><strong>First Name:</strong> {{ myInfoCtrl.user.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ myInfoCtrl.user.lastName }}</p>
+    <p><strong>Email:</strong> {{ myInfoCtrl.user.email }}</p>
+    <p><strong>Phone:</strong> {{ myInfoCtrl.user.phone }}</p>
+  
+    <div>
+      <h4>Favorite Menu Item</h4>
+      <img ng-src="{{ myInfoCtrl.favoriteItem.image_url }}" alt="Item" style="max-width: 150px;">
+      <p><strong>{{ myInfoCtrl.favoriteItem.name }}</strong></p>
+      <p>{{ myInfoCtrl.favoriteItem.description }}</p>
+    </div>
+  </div>
+  
+  <div class="container" ng-if="!myInfoCtrl.signedUp">
+    <p>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+  </div>
+

@@ -1,0 +1,39 @@
+<div class="container">
+    <form name="signupForm" ng-submit="signupCtrl.submit()" novalidate>
+  
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" ng-model="signupCtrl.user.firstName" name="firstName" required class="form-control">
+        <div ng-show="signupForm.firstName.$touched && signupForm.firstName.$invalid">Required</div>
+      </div>
+  
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" ng-model="signupCtrl.user.lastName" name="lastName" required class="form-control">
+        <div ng-show="signupForm.lastName.$touched && signupForm.lastName.$invalid">Required</div>
+      </div>
+  
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" ng-model="signupCtrl.user.email" name="email" required class="form-control">
+        <div ng-show="signupForm.email.$touched && signupForm.email.$invalid">Invalid Email</div>
+      </div>
+  
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" ng-model="signupCtrl.user.phone" name="phone" required class="form-control">
+        <div ng-show="signupForm.phone.$touched && signupForm.phone.$invalid">Required</div>
+      </div>
+  
+      <div class="form-group">
+        <label>Favorite Menu Item</label>
+        <input type="text" ng-model="signupCtrl.user.favorite" name="favorite" ng-blur="signupCtrl.validateFavorite()" class="form-control">
+        <div ng-if="signupCtrl.menuItemValid === false" class="text-danger">No such menu number exists.</div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid || signupCtrl.menuItemValid === false">Submit</button>
+  
+      <p class="text-success" ng-if="signupCtrl.message">{{ signupCtrl.message }}</p>
+    </form>
+  </div>
+  
