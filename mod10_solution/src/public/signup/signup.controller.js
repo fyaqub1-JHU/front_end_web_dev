@@ -25,7 +25,10 @@
       };
     
       signupCtrl.submit = function () {
-        if (signupCtrl.menuItemValid) {
+        if (!signupCtrl.menuItemValid) {
+          signupCtrl.message = "Please enter a valid menu item.";
+        
+        } else {
           UserService.saveUser(signupCtrl.user, signupCtrl.favoriteItem, true);
           signupCtrl.message = "Your information has been saved.";
         }
