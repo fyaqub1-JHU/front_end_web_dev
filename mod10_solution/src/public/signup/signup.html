@@ -30,7 +30,7 @@
   
       <div class="form-group">
         <label>Favorite Menu Item</label>
-        <input type="text" ng-model="signupCtrl.user.favorite" name="favorite" ng-change="signupCtrl.validateFavorite()" class="form-control">
+        <input type="text" ng-model="signupCtrl.user.favorite" name="favorite" ng-blur="signupCtrl.validateFavorite()" class="form-control">
         <div ng-if="signupCtrl.menuItemValid === false" class="text-danger">No such menu number exists.</div>
         <div ng-if="signupCtrl.menuItemValid === true" class="text-success">Valid</div>
       </div>
